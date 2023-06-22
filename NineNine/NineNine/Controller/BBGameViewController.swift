@@ -24,7 +24,7 @@ class BBGameViewController: UIViewController {
         slider.setThumbImage(gameData.fishThumbImage(), for: .normal) // 슬라이더의 thumb가 터치되지 않았을 때
         slider.setThumbImage(gameData.fishThumbImage(), for: .highlighted) // thumb가 터치되었을 때
         
-        setViewRoundShape(cornerRadius: 20)
+        setViewRoundShape(targetView: scoreView, cornerRadius: 20)
     }
     
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -36,11 +36,5 @@ class BBGameViewController: UIViewController {
             score += 1
             scoreLabel.text = "\(score)"
         }
-    }
-    
-    func setViewRoundShape(cornerRadius: CGFloat) {
-        scoreView
-            .layer.cornerRadius = cornerRadius
-        scoreView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
 }

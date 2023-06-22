@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         gameContentsTableView.delegate = self
         gameContentsTableView.dataSource = self
         
-        setViewRoundShape(cornerRadius: 20)
+        self.setViewsRoundShape(cornerRadius: 20)
         gameContentsTableView.backgroundColor = UIColor(hex: "#F4F4F4")
     }
     
@@ -31,15 +31,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let selectedIndexPath = gameContentsTableView.indexPathForSelectedRow {
             gameContentsTableView.deselectRow(at: selectedIndexPath, animated: animated)
         }
-    }
-    
-    func setViewRoundShape(cornerRadius: CGFloat) {
-        gameListHeadView
-            .layer.cornerRadius = cornerRadius
-        gameListHeadView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        gameContentsTableView
-            .layer.cornerRadius = cornerRadius
-        gameContentsTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
     /* ----- UITableViewDataSource 프로토콜 필수 구현 메소드 ------ */
@@ -97,6 +88,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          }
         
         self.navigationController?.pushViewController(uvc, animated: true)
+    }
+    
+    func setViewsRoundShape(cornerRadius: CGFloat) {
+        gameListHeadView
+            .layer.cornerRadius = cornerRadius
+        gameListHeadView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        gameContentsTableView
+            .layer.cornerRadius = cornerRadius
+        gameContentsTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
 }
 
