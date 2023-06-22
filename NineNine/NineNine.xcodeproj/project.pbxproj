@@ -21,6 +21,7 @@
 		CC7FC8622A2847F700D4F33A /* BBGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FC8612A2847F700D4F33A /* BBGameViewController.swift */; };
 		CC8787212A24860700C79AD3 /* BBStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8787202A24860700C79AD3 /* BBStartingViewController.swift */; };
 		CCD55F1D2A44AD5600AD3206 /* SetViewRoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD55F1C2A44AD5600AD3206 /* SetViewRoundShape.swift */; };
+		CCD55F1F2A44AF4900AD3206 /* StackNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD55F1E2A44AF4900AD3206 /* StackNavigation.swift */; };
 		CCF41ACE2A19FDA100355AEC /* LabelAttiributeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF41ACD2A19FDA100355AEC /* LabelAttiributeUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		CC7FC8612A2847F700D4F33A /* BBGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBGameViewController.swift; sourceTree = "<group>"; };
 		CC8787202A24860700C79AD3 /* BBStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBStartingViewController.swift; sourceTree = "<group>"; };
 		CCD55F1C2A44AD5600AD3206 /* SetViewRoundShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewRoundShape.swift; sourceTree = "<group>"; };
+		CCD55F1E2A44AF4900AD3206 /* StackNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackNavigation.swift; sourceTree = "<group>"; };
 		CCF41ACD2A19FDA100355AEC /* LabelAttiributeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAttiributeUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				CCF41ACD2A19FDA100355AEC /* LabelAttiributeUtils.swift */,
 				CC0C83502A1B293D00DB6534 /* ImageResize.swift */,
 				CCD55F1C2A44AD5600AD3206 /* SetViewRoundShape.swift */,
+				CCD55F1E2A44AF4900AD3206 /* StackNavigation.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				CCD55F1D2A44AD5600AD3206 /* SetViewRoundShape.swift in Sources */,
 				CCF41ACE2A19FDA100355AEC /* LabelAttiributeUtils.swift in Sources */,
+				CCD55F1F2A44AF4900AD3206 /* StackNavigation.swift in Sources */,
 				CC0C83512A1B293D00DB6534 /* ImageResize.swift in Sources */,
 				CC5D8DE52A1928AA0089A850 /* ViewController.swift in Sources */,
 				CC5D8DF92A1929C40089A850 /* HexColor.swift in Sources */,

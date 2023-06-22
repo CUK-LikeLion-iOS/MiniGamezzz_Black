@@ -11,7 +11,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var gameListHeadView
     : UIView!
-    @IBOutlet weak var gameListFootView: UIView!
     @IBOutlet weak var gameContentsTableView: UITableView!
     
     let gameData = GameData()
@@ -41,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 
-    // Provide a cell object for each row.
+    // 각 셀의 이미지와 타이틀 레이블 설정하는 부분
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = gameContentsTableView.dequeueReusableCell(withIdentifier: "gameContentCell", for: indexPath) as! GameContentsTableViewCell
@@ -69,27 +68,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0: // 탭탭 테이블 뷰 셀
-            moveGameStartingView(storyBoardID: "TabTabVC")
+            pushStackNavigation(vc: self, storyBoardID: "TabTabVC")
             break
         case 1: // 쉐킷쉐킷 테이블 뷰 셀
-            moveGameStartingView(storyBoardID: "TabTabVC")
+            pushStackNavigation(vc: self, storyBoardID: "TabTabVC")
             break
         case 2: // 부비부비 테이블 뷰 셀
-            moveGameStartingView(storyBoardID: "BBStartingVC")
+            pushStackNavigation(vc: self, storyBoardID: "BBStartingVC")
             break
         default:
             return
         }
     }
-    
-    func moveGameStartingView(storyBoardID: String) {
-        guard let uvc = self.storyboard?.instantiateViewController(identifier: "\(storyBoardID)") else {
-             return
-         }
-        
-        self.navigationController?.pushViewController(uvc, animated: true)
-    }
-    
+
     func setViewsRoundShape(cornerRadius: CGFloat) {
         gameListHeadView
             .layer.cornerRadius = cornerRadius
