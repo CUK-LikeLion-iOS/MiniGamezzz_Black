@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         gameContentsTableView.delegate = self
         gameContentsTableView.dataSource = self
         
-        self.setViewsRoundShape(cornerRadius: 20)
+        self.makeViewRoundShape(cornerRadius: 20)
         gameContentsTableView.backgroundColor = UIColor(hex: "#F4F4F4")
     }
     
@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-    func setViewsRoundShape(cornerRadius: CGFloat) {
+    func makeViewRoundShape(cornerRadius: CGFloat) {
         gameListHeadView
             .layer.cornerRadius = cornerRadius
         gameListHeadView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]

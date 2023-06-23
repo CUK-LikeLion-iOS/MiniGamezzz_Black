@@ -7,7 +7,7 @@
 
 import UIKit
 
-func setViewRoundShape(targetView: UIView, cornerRadius: CGFloat) {
+func makeCornerRoundShape(targetView: UIView, cornerRadius: CGFloat) {
     targetView
         .layer.cornerRadius = cornerRadius
     targetView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
