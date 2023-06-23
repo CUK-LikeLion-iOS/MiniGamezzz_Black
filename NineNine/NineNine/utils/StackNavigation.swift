@@ -15,6 +15,24 @@ func pushStackNavigation(vc: UIViewController, storyBoardID: String) {
     vc.navigationController?.pushViewController(uvc, animated: true)
 }
 
+func pushStackNavigationIntoHome(homeVC vc: UIViewController, storyBoardID: String) {
+    var uvc: UIViewController
+
+    // 리펙토링 필요!!!!!!!
+    switch storyBoardID {
+    case "BBStartingVC":
+        guard let nextVC = vc.storyboard?.instantiateViewController(identifier: "\(storyBoardID)") as? BBStartingViewController else {
+             return
+         }
+        nextVC.delegate = vc as? AudioPlayerDelegate
+        uvc = nextVC
+        break
+    default:
+        return
+    }
+    vc.navigationController?.pushViewController(uvc, animated: true)
+}
+
 func popStackNavigation(vc: UIViewController) {
     vc.navigationController?.popViewController(animated: true)
 }
