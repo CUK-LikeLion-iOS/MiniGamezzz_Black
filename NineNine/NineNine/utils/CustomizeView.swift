@@ -16,7 +16,7 @@ func makeCornerRoundShape(targetView: UIView, cornerRadius: CGFloat) {
 func countDownBeforeGame(countDownView view: UIView) {
     let timer: Timer?
     let label = view.subviews.first as! UILabel
-    var sec: Int = 0
+    var sec: Int = 1
     
     guard label.text != nil else { return }
     
