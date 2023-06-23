@@ -13,6 +13,7 @@ class BBGameViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var scoreView: UIView!
+    @IBOutlet weak var countDownView: UIView!
 
     let gameData: GameData = GameData()
     var score: Int = 0
@@ -25,6 +26,7 @@ class BBGameViewController: UIViewController {
         slider.setThumbImage(gameData.fishThumbImage(), for: .highlighted) // thumb가 터치되었을 때
         
         makeCornerRoundShape(targetView: scoreView, cornerRadius: 20)
+        countDownBeforeGame(countDownView: countDownView)
     }
     
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -37,4 +39,5 @@ class BBGameViewController: UIViewController {
             scoreLabel.text = "\(score)"
         }
     }
+
 }
