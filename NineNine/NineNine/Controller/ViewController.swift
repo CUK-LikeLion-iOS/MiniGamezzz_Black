@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AudioPlayerDelegate, AVAudioPlayerDelegate {
 
     @IBOutlet weak var gameListHeadView
     : UIView!
     @IBOutlet weak var gameContentsTableView: UITableView!
     
     let gameData = GameData()
+    var player: AVAudioPlayer! = makeAudioPlayer(audioResource: "Main")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.makeViewRoundShape(cornerRadius: 20)
         gameContentsTableView.backgroundColor = UIColor(hex: "#F4F4F4")
+        playAudioPlayer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +59,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     /* ------------------------------------------------------ */
     
+    /* ---------------- UITableView 관련 메서드 ---------------- */
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
     }
@@ -68,13 +73,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0: // 탭탭 테이블 뷰 셀
-            pushStackNavigation(vc: self, storyBoardID: "TabTabVC")
+            pushStackNavigationIntoHome(homeVC: self, storyBoardID: "TabTabVC")
             break
         case 1: // 쉐킷쉐킷 테이블 뷰 셀
-            pushStackNavigation(vc: self, storyBoardID: "TabTabVC")
+            pushStackNavigationIntoHome(homeVC: self, storyBoardID: "TabTabVC")
             break
         case 2: // 부비부비 테이블 뷰 셀
-            pushStackNavigation(vc: self, storyBoardID: "BBStartingVC")
+            pushStackNavigationIntoHome(homeVC: self, storyBoardID: "BBStartingVC")
             break
         default:
             return
@@ -89,5 +94,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             .layer.cornerRadius = cornerRadius
         gameContentsTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
+    
+    /* ------------------------------------------------------ */
+
+    
+    /* -------------------- 오디오 관련 메서드 ------------------ */
+    
+    // 오디오 플레이어가 성공적으로 종료되었으면 다시 재생, 아니면 할당 해제
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if (flag == true) {
+            player.play()
+        }
+        else {
+            weak var audioPlayer = player
+            audioPlayer = nil
+        }
+    }
+
+    func playAudioPlayer() {
+        player?.prepareToPlay()
+        player?.play()
+    }
+    
+    // AudioPlayerDelegate 필수 구현 메서드
+    func stopAudioPlayer() {
+        player?.stop()
+        player = nil
+    }
+
 }
 
