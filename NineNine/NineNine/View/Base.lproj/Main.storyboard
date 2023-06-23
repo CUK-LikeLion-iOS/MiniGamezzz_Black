@@ -548,7 +548,7 @@
                                                                         <rect key="frame" x="0.0" y="70" width="430" height="70"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5U-mm-hrb">
-                                                                                <rect key="frame" x="162.66666666666666" y="11.666666666666654" width="104.66666666666666" height="46.666666666666657"/>
+                                                                                <rect key="frame" x="164.66666666666666" y="13" width="100.99999999999997" height="44"/>
                                                                                 <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="40"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -658,7 +658,7 @@
                                                         <rect key="frame" x="0.0" y="140" width="430" height="139.66666666666663"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생선을 좌우로 마구마구 비벼주세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwv-f6-Zjy">
-                                                                <rect key="frame" x="74.333333333333343" y="58.000000000000007" width="281.66666666666663" height="23.333333333333336"/>
+                                                                <rect key="frame" x="61.333333333333343" y="58.666666666666629" width="307.33333333333326" height="22"/>
                                                                 <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="20"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -684,14 +684,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIW-El-br2" userLabel="Count Down View">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSf-nj-W56">
-                                        <rect key="frame" x="215" y="466" width="0.0" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSf-nj-W56">
+                                        <rect key="frame" x="172" y="388" width="86.333333333333314" height="156.33333333333337"/>
                                         <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="142"/>
                                         <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.42027110927152317" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5962075745033113" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="FSf-nj-W56" firstAttribute="centerY" secondItem="ZIW-El-br2" secondAttribute="centerY" id="8zk-QO-KOu"/>
                                     <constraint firstItem="FSf-nj-W56" firstAttribute="centerX" secondItem="ZIW-El-br2" secondAttribute="centerX" id="Diz-dW-SkE"/>
