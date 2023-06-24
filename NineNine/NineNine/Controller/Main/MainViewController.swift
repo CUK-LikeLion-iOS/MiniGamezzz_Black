@@ -73,13 +73,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0: // 탭탭 테이블 뷰 셀
-            pushStackNavigationIntoHome(homeVC: self, storyBoardID: "TabTabVC")
+            pushStackNavigationAddAudioDelegate(homeVC: self, storyBoardID: "TabTabVC")
             break
         case 1: // 쉐킷쉐킷 테이블 뷰 셀
-            pushStackNavigationIntoHome(homeVC: self, storyBoardID: "TabTabVC")
+            pushStackNavigationAddAudioDelegate(homeVC: self, storyBoardID: "TabTabVC")
             break
         case 2: // 부비부비 테이블 뷰 셀
-            pushStackNavigationIntoHome(homeVC: self, storyBoardID: "BBStartingVC")
+            pushStackNavigationAddAudioDelegate(homeVC: self, storyBoardID: "BBStartingVC")
             break
         default:
             return

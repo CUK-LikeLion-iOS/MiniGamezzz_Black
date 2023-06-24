@@ -15,7 +15,27 @@ func pushStackNavigation(vc: UIViewController, storyBoardID: String) {
     vc.navigationController?.pushViewController(uvc, animated: true)
 }
 
-func pushStackNavigationIntoHome(homeVC vc: UIViewController, storyBoardID: String) {
+func pushStackNavigationAddGameDelegate(vc: UIViewController, storyBoardID: String) {
+    var uvc: UIViewController
+    
+    // 리펙토링 필요!!!!
+    switch storyBoardID {
+    case "BBGameResultVC":
+        guard let nextVC = vc.storyboard?.instantiateViewController(identifier: "\(storyBoardID)") as? BBGameResultViewController else {
+             return
+         }
+        nextVC.delegate = vc as? GameDelegate
+        uvc = nextVC
+        break
+    default:
+        return
+    }
+    
+    vc.navigationController?.pushViewController(uvc, animated: true)
+}
+
+
+func pushStackNavigationAddAudioDelegate(homeVC vc: UIViewController, storyBoardID: String) {
     var uvc: UIViewController
 
     // 리펙토링 필요!!!!!!!
