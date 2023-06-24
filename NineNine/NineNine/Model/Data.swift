@@ -9,7 +9,7 @@ import UIKit
 
 struct MainData {
     private let gameTitles: [String] = ["탭탭!", "쉐킷쉐킷!", "부비부비"]
-    private var gameImages: [UIImage] = [#imageLiteral(resourceName: "tabtab"), #imageLiteral(resourceName: "Shake"), #imageLiteral(resourceName: "swipe")]
+    private let gameImages: [UIImage] = [#imageLiteral(resourceName: "tabtab"), #imageLiteral(resourceName: "Shake"), #imageLiteral(resourceName: "swipe")]
     
     func gameTitleArray() -> [String] {
         return gameTitles
@@ -21,8 +21,9 @@ struct MainData {
 }
 
 struct BBGameData {
-    private var swipingCatImages:[UIImage] = [#imageLiteral(resourceName: "left"), #imageLiteral(resourceName: "right")]
-    private var fishImage: UIImage = #imageLiteral(resourceName: "fish_icon")
+    private let swipingCatImages:[UIImage] = [#imageLiteral(resourceName: "left"), #imageLiteral(resourceName: "right")]
+    private let fishImage: UIImage = #imageLiteral(resourceName: "fish_icon")
+    private let gameStartBtnImages: [UIImage] = [#imageLiteral(resourceName: "GameStartBtn2"), #imageLiteral(resourceName: "GameStartBtn")]
     
     func swipingCatImageArray() -> [UIImage] {
         return swipingCatImages
@@ -30,5 +31,9 @@ struct BBGameData {
     
     func fishThumbImage() -> UIImage {
         return fishImage
+    }
+    
+    func gameStartBtnImageArray() -> [UIImage] {
+        return gameStartBtnImages
     }
 }

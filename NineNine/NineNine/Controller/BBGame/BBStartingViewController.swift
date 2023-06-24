@@ -13,17 +13,18 @@ class BBStartingViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var gameStartBtn: UIImageView!
     weak var delegate: AudioPlayerDelegate?
     var player: AVAudioPlayer! = makeAudioPlayer(audioResource: "Game")
+    let gameStartBtnImages: [UIImage] = BBGameData().gameStartBtnImageArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            gameStartBtn.image = #imageLiteral(resourceName: "GameStartBtn2")
+        gameStartBtn.image = gameStartBtnImages[0]
     }
 
     @IBAction func gameStartBtnPressed(_ sender: UIButton) {
-        gameStartBtn.image = #imageLiteral(resourceName: "GameStartBtn")
+        gameStartBtn.image = gameStartBtnImages[1]
     }
 
     @IBAction func moveBack(_ sender: UIButton) {
