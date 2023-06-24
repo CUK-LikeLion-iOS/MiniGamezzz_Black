@@ -15,7 +15,7 @@ class BBGameViewController: UIViewController {
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var countDownView: UIView!
 
-    let gameData: GameData = GameData()
+    let gameData: BBGameData = BBGameData()
     var score: Int = 0
 
     override func viewDidLoad() {

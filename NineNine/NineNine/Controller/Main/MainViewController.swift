@@ -14,7 +14,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     : UIView!
     @IBOutlet weak var gameContentsTableView: UITableView!
     
-    let gameData = GameData()
+    let data = MainData()
     var player: AVAudioPlayer! = makeAudioPlayer(audioResource: "Main")
 
     override func viewDidLoad() {
@@ -47,8 +47,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = gameContentsTableView.dequeueReusableCell(withIdentifier: "gameContentCell", for: indexPath) as! GameContentsTableViewCell
-        let gameTitleArray: [String] = gameData.gameTitleArray()
-        let gameImageArray: [UIImage] = gameData.gameImageArray()
+        let gameTitleArray: [String] = data.gameTitleArray()
+        let gameImageArray: [UIImage] = data.gameImageArray()
         
         cell.gameTitleLabel.text = gameTitleArray[indexPath.section]
         cell.gameImageView.image = gameImageArray[indexPath.section]
@@ -66,7 +66,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return gameData.gameTitleArray().count
+        return data.gameTitleArray().count
     }
     
     // 각각의 테이블 뷰 셀에 따라 다른 화면으로 이동하는 부분

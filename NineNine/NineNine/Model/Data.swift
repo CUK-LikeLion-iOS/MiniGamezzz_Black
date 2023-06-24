@@ -10,8 +10,6 @@ import UIKit
 struct MainData {
     private let gameTitles: [String] = ["탭탭!", "쉐킷쉐킷!", "부비부비"]
     private var gameImages: [UIImage] = [#imageLiteral(resourceName: "tabtab"), #imageLiteral(resourceName: "Shake"), #imageLiteral(resourceName: "swipe")]
-    private var swipingCatImages:[UIImage] = [#imageLiteral(resourceName: "left"), #imageLiteral(resourceName: "right")]
-    private var fishImage: UIImage = #imageLiteral(resourceName: "fish_icon")
     
     func gameTitleArray() -> [String] {
         return gameTitles
@@ -20,6 +18,11 @@ struct MainData {
     func gameImageArray() -> [UIImage] {
         return gameImages
     }
+}
+
+struct BBGameData {
+    private var swipingCatImages:[UIImage] = [#imageLiteral(resourceName: "left"), #imageLiteral(resourceName: "right")]
+    private var fishImage: UIImage = #imageLiteral(resourceName: "fish_icon")
     
     func swipingCatImageArray() -> [UIImage] {
         return swipingCatImages
