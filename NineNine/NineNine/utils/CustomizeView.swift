@@ -14,8 +14,8 @@ func makeCornerRoundShape(targetView: UIView, cornerRadius: CGFloat) {
 }
 
 func countDownBeforeGame(countDownView view: UIView) {
-    let timer: Timer?
-    let label = view.subviews.first as! UILabel
+    var timer: Timer?
+    let label = view.subviews.first as! UILabel // 무조건 하위 뷰 객체들 중 첫 번째가 카운트다운 Label이어야함
     var sec: Int = 1
     
     guard label.text != nil else { return }
