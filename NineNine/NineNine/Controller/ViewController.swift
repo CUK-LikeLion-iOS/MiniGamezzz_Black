@@ -101,8 +101,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     /* -------------------- 오디오 관련 메서드 ------------------ */
     
     // 오디오 플레이어가 성공적으로 종료되었으면 다시 재생, 아니면 할당 해제
+
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if (flag == true) {
+        if (flag) {
+            player.prepareToPlay()
             player.play()
         }
         else {
@@ -110,8 +112,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             audioPlayer = nil
         }
     }
-
+    
     func playAudioPlayer() {
+        player?.delegate = self
         player?.prepareToPlay()
         player?.play()
     }
