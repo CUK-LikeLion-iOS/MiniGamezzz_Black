@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BBGameViewController: UIViewController {
+class BBGameViewController: UIViewController, GameDelegate {
 
     @IBOutlet weak var catImage: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -27,6 +27,7 @@ class BBGameViewController: UIViewController {
         
         makeCornerRoundShape(targetView: scoreView, cornerRadius: 20)
         countDownBeforeGame(countDownView: countDownView)
+        timeTravel()
     }
     
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -37,6 +38,17 @@ class BBGameViewController: UIViewController {
             catImage.image = image
             score += 1
             scoreLabel.text = "\(score)"
+        }
+    }
+    
+    // BBGameProtocol 필수 구현 메서드
+    func showGameResult() -> Int {
+        return score
+    }
+    
+    func timeTravel() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 13.0) {
+            pushStackNavigationAddGameDelegate(vc: self, storyBoardID: "BBGameResultVC")
         }
     }
 
