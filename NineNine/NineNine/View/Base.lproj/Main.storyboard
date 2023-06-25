@@ -334,7 +334,7 @@
                                                                         <rect key="frame" x="0.0" y="82.333333333333314" width="393" height="82.666666666666686"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPP-1n-3cy">
-                                                                                <rect key="frame" x="50" y="13.000000000000004" width="293.33333333333337" height="56.333333333333343"/>
+                                                                                <rect key="frame" x="50" y="13.000000000000004" width="293.33333333333331" height="56.333333333333343"/>
                                                                                 <string key="text">화면의 인형을 누른 상태로
 좌우로 마구마구 비벼주세요!
 고양이를 인형으로 재미있게 놀아주세요!</string>
@@ -658,7 +658,7 @@
                                                         <rect key="frame" x="0.0" y="126.66666666666663" width="393" height="126.33333333333331"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생선을 좌우로 마구마구 비벼주세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwv-f6-Zjy">
-                                                                <rect key="frame" x="43" y="52" width="307.33333333333337" height="22"/>
+                                                                <rect key="frame" x="43" y="52" width="307.33333333333331" height="22"/>
                                                                 <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="20"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>

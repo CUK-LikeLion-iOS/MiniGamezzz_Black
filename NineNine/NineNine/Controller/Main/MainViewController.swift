@@ -30,6 +30,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         if let selectedIndexPath = gameContentsTableView.indexPathForSelectedRow {
             gameContentsTableView.deselectRow(at: selectedIndexPath, animated: animated)
         }
@@ -71,19 +72,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // 각각의 테이블 뷰 셀에 따라 다른 화면으로 이동하는 부분
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        case 0: // 탭탭 테이블 뷰 셀
-            pushStackNavigationAddAudioDelegate(homeVC: self, storyBoardID: "TabTabVC")
-            break
-        case 1: // 쉐킷쉐킷 테이블 뷰 셀
-            pushStackNavigationAddAudioDelegate(homeVC: self, storyBoardID: "TabTabVC")
-            break
-        case 2: // 부비부비 테이블 뷰 셀
-            pushStackNavigationAddAudioDelegate(homeVC: self, storyBoardID: "BBStartingVC")
-            break
-        default:
+        
+        let storyBoardID = data.gameStoryboardIDArray()[indexPath.section]
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "\(storyBoardID)") else {
             return
         }
+
+        pushNextVCFromMainVC(nextVC: nextVC, mainVC: self, idx: indexPath.section)
     }
 
     func makeViewRoundShape(cornerRadius: CGFloat) {
